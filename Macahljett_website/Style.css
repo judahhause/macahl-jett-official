@@ -1,0 +1,174 @@
+/*==========================================================
+  BRAND-SPECIFIC CSS: Macahl Jett Official Website
+============================================================*/
+
+/* ----------------------------------------------------------
+  1. CSS Variables (The Macahl Jett Brand Palette)
+-------------------------------------------------------------*/
+:root {
+    /* Primary Colors */
+    --color-primary-pink: #CB438B;    /* Orchard Whisper */
+    --color-secondary-pink: #F0849E;  /* Azaela Pink */
+    --color-accent-orange: #F77A28;   /* Tangerine Zest */
+
+    /* Neutral & Accent Colors */
+    --color-background-light: #FFF0D2; /* Pearl Tint (used as background) */
+    --color-accent-yellow: #C1AC5B;    /* Daffodil Yellow */
+    --color-text-dark: #1f1f1f;
+    --color-white: #ffffff;
+
+    /* Typography */
+    --font-header: 'League Spartan', sans-serif; /* For H1, H2, and major titles */
+    --font-body: 'Roboto', sans-serif;          /* For paragraphs and general text */
+    --line-height-base: 1.6;
+}
+
+/* ----------------------------------------------------------
+  2. Modern CSS Reset
+-------------------------------------------------------------*/
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+/* Remove default margin/padding */
+body, h1, h2, h3, h4, p, figure, blockquote, dl, dd {
+    margin: 0;
+    padding: 0;
+}
+
+/* Set core body defaults */
+body {
+    min-height: 100vh;
+    line-height: var(--line-height-base);
+    text-rendering: optimizeSpeed;
+    font-family: var(--font-body);
+    color: var(--color-text-dark);
+    background-color: var(--color-background-light); /* Pearl Tint background */
+    scroll-behavior: smooth;
+}
+
+/* Make images easier to work with */
+img, picture {
+    max-width: 100%;
+    display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input, button, textarea, select {
+    font: inherit;
+}
+
+/* Remove list styles on ul, ol elements */
+ul, ol {
+    list-style: none;
+    padding: 0;
+}
+
+/* ----------------------------------------------------------
+  3. Base Typography and Headings
+-------------------------------------------------------------*/
+h1, h2, h3, h4 {
+    font-family: var(--font-header);
+    color: var(--color-primary-pink);
+    line-height: 1.1; /* Tighter line height for headings */
+    margin-bottom: 0.5em;
+    font-weight: 800; /* Bold, unapologetic style */
+}
+
+h1 { font-size: 3.5rem; }
+h2 { font-size: 2.5rem; }
+h3 { font-size: 1.8rem; }
+p { margin-bottom: 1.5em; }
+
+/* Links are bold and branded */
+a {
+    color: var(--color-accent-orange); /* Tangerine Zest for links */
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+a:hover {
+    color: var(--color-secondary-pink);
+}
+
+
+/* ----------------------------------------------------------
+  4. Header/Navigation Example
+-------------------------------------------------------------*/
+
+.header {
+    background: var(--color-text-dark); /* Dark background for bold contrast */
+    padding: 1rem 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo a {
+    font-family: var(--font-header);
+    font-size: 2rem;
+    color: var(--color-background-light); /* Light text on dark background */
+    /* Add styling for Macahl Jett logo/text here */
+}
+
+/* Desktop Navigation Menu */
+.nav-menu {
+    display: flex;
+    gap: 2rem;
+}
+
+.nav-menu a {
+    color: var(--color-white);
+    text-transform: uppercase;
+    font-weight: 600;
+    padding: 0.5rem;
+}
+
+.nav-menu a:hover {
+    color: var(--color-accent-yellow); /* Daffodil Yellow hover */
+}
+
+/* Mobile Toggle (Hamburger Icon) - Hide on desktop */
+.nav-toggle {
+    display: none; 
+    cursor: pointer;
+    font-size: 2rem;
+    color: var(--color-white);
+}
+
+/* ----------------------------------------------------------
+  5. Responsive Design (Mobile First Approach)
+-------------------------------------------------------------*/
+
+@media (max-width: 768px) {
+    /* Mobile Navigation */
+    .nav-toggle {
+        display: block; /* Show hamburger icon */
+        z-index: 100;
+    }
+    
+    .nav-menu {
+        /* Hide menu off-screen by default */
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 70%;
+        min-height: 100vh;
+        background: var(--color-text-dark);
+        flex-direction: column;
+        align-items: center;
+        padding-top: 5rem;
+        transform: translateX(100%); /* Slide off-screen right */
+        transition: transform 0.3s ease-in-out;
+        z-index: 99;
+    }
+
+    /* Active class toggled by script.js */
+    .nav-menu.active {
+        transform: translateX(0); /* Slide on-screen */
+    }
+
+    .nav-menu li {
+        margin: 1rem 0;
+    }
+}

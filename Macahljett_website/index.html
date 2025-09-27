@@ -8,10 +8,10 @@
     <link rel="stylesheet" href="style.css">
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@600;800&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@600;800&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     
-    </head>
+</head>
 <body>
 
     <div id="mini-player">
@@ -24,12 +24,12 @@
         </div>
     </div>
 
-    <header id="main-header">
+    <header id="main-header" class="header">
         <a href="#" class="logo-link">
-            <img src="path/to/Chrome_macahl_logo.jpg" alt="Macahl Jett Logo" class="site-logo">
+            <img src="Chrome macahl logo (1).jpg" alt="Macahl Jett Logo" class="site-logo">
         </a>
         <nav>
-            <ul>
+            <ul class="nav-menu" role="list">
                 <li><a href="#music">Music</a></li>
                 <li><a href="#story">Story</a></li>
                 <li><a href="#community">Community</a></li>
@@ -37,13 +37,19 @@
             </ul>
         </nav>
         <button class="cta-button">LISTEN NOW</button>
+        <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">&#9776;</button>
     </header>
 
     <section id="hero" class="full-height-section">
-        <video id="hero-video" autoplay loop muted playsinline poster="path/to/hero_placeholder.jpg">
-            <source src="path/to/MVI_0957.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
+        <div class="hero-video-container">
+            <iframe
+                src="https://www.youtube.com/embed/UKc7DKgiZyY?autoplay=1&mute=1&controls=0&loop=1&playlist=UKc7DKgiZyY&modestbranding=1&rel=0&showinfo=0"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen
+                title="Macahl Jett - My Sound is My Testimony"
+            ></iframe>
+        </div>
         <div class="hero-overlay"></div>
         <div class="hero-content">
             <h1>"My Sound is My Testimony."</h1>
@@ -56,11 +62,11 @@
         <h2 class="section-title">The Sound Bridge</h2>
         <div class="discography-grid">
             <div class="album-card interactive">
-                <img src="path/to/IMG_7315_Album_Cover.jpg" alt="[Album Name] Album Cover">
+                <img src="IMG_7315_Album_Cover.jpg" alt="The Unraveling Album Cover"> 
                 <h3 class="album-title">The Unraveling</h3>
                 <button class="play-album-btn">PLAY FULL ALBUM</button>
             </div>
-            </div>
+        </div>
     </section>
 
     <section id="story" class="standard-section wide-content">
